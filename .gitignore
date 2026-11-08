@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Projet
+.env
+data/*
+!data/.gitkeep
+chroma_db/
+cache/
+*.sqlite
