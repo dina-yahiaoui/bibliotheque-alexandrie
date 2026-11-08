@@ -50,3 +50,6 @@ corpus:
     - tutorial/testing.md
     - tutorial/debugging.md
     - deployment/docker.md
+chunking:
+  sizes: [500, 1000]
+  overlap: 100
