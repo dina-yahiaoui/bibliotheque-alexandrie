@@ -53,3 +53,9 @@ corpus:
 chunking:
   sizes: [500, 1000]
   overlap: 100
+
+embeddings:
+  model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+vector_db:
+  path: chroma_db
