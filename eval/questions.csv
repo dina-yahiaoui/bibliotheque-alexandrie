@@ -1,0 +1,21 @@
+question;page_attendue
+Comment rendre un paramètre de requête optionnel ?;tutorial/query-params/
+Comment récupérer une valeur directement dans l'URL, comme l'id d'un utilisateur ?;tutorial/path-params/
+Comment envoyer des données JSON dans le corps d'une requête POST ?;tutorial/body/
+Comment limiter la longueur maximale d'un texte passé en paramètre de requête ?;tutorial/query-params-str-validations/
+Comment imposer qu'un nombre dans l'URL soit supérieur à zéro ?;tutorial/path-params-numeric-validations/
+Comment lire un cookie envoyé par le navigateur ?;tutorial/cookie-params/
+Comment récupérer le User-Agent de la requête ?;tutorial/header-params/
+Comment éviter de renvoyer le mot de passe de l'utilisateur dans la réponse ?;tutorial/response-model/
+Comment renvoyer le code 201 après avoir créé un élément ?;tutorial/response-status-code/
+Comment recevoir un fichier envoyé par l'utilisateur ?;tutorial/request-files/
+Comment renvoyer une erreur 404 quand un élément n'existe pas ?;tutorial/handling-errors/
+Comment modifier seulement certains champs d'un objet avec PATCH ?;tutorial/body-updates/
+C'est quoi l'injection de dépendances dans FastAPI ?;tutorial/dependencies/
+Comment fermer la connexion à la base de données après chaque requête avec une dépendance ?;tutorial/dependencies/dependencies-with-yield/
+Comment protéger une route avec un token JWT ?;tutorial/security/oauth2-jwt/
+Comment autoriser mon frontend sur un autre domaine à appeler mon API ?;tutorial/cors/
+Comment lancer une tâche après avoir renvoyé la réponse, par exemple envoyer un email ?;tutorial/background-tasks/
+Comment découper mon application en plusieurs fichiers ?;tutorial/bigger-applications/
+Comment écrire des tests pour mon API ?;tutorial/testing/
+Comment mettre mon application FastAPI dans un conteneur Docker ?;deployment/docker/

@@ -1,0 +1,202 @@
+[
+  {
+    "question": "Comment rendre un paramètre de requête optionnel ?",
+    "attendu": "tutorial/query-params/",
+    "trouves": [
+      "tutorial/query-params/",
+      "tutorial/query-params/",
+      "tutorial/query-params/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment récupérer une valeur directement dans l'URL, comme l'id d'un utilisateur ?",
+    "attendu": "tutorial/path-params/",
+    "trouves": [
+      "tutorial/security/simple-oauth2/",
+      "tutorial/security/get-current-user/",
+      "tutorial/security/get-current-user/"
+    ],
+    "hit": false
+  },
+  {
+    "question": "Comment envoyer des données JSON dans le corps d'une requête POST ?",
+    "attendu": "tutorial/body/",
+    "trouves": [
+      "tutorial/request-files/",
+      "tutorial/request-files/",
+      "tutorial/body/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment limiter la longueur maximale d'un texte passé en paramètre de requête ?",
+    "attendu": "tutorial/query-params-str-validations/",
+    "trouves": [
+      "tutorial/query-params-str-validations/",
+      "tutorial/query-params-str-validations/",
+      "tutorial/query-params-str-validations/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment imposer qu'un nombre dans l'URL soit supérieur à zéro ?",
+    "attendu": "tutorial/path-params-numeric-validations/",
+    "trouves": [
+      "tutorial/path-params-numeric-validations/",
+      "tutorial/path-params-numeric-validations/",
+      "tutorial/query-params/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment lire un cookie envoyé par le navigateur ?",
+    "attendu": "tutorial/cookie-params/",
+    "trouves": [
+      "tutorial/cookie-params/",
+      "tutorial/cookie-params/",
+      "tutorial/cookie-params/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment récupérer le User-Agent de la requête ?",
+    "attendu": "tutorial/header-params/",
+    "trouves": [
+      "tutorial/security/get-current-user/",
+      "tutorial/security/simple-oauth2/",
+      "tutorial/security/simple-oauth2/"
+    ],
+    "hit": false
+  },
+  {
+    "question": "Comment éviter de renvoyer le mot de passe de l'utilisateur dans la réponse ?",
+    "attendu": "tutorial/response-model/",
+    "trouves": [
+      "tutorial/response-model/",
+      "tutorial/response-model/",
+      "tutorial/security/simple-oauth2/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment renvoyer le code 201 après avoir créé un élément ?",
+    "attendu": "tutorial/response-status-code/",
+    "trouves": [
+      "tutorial/response-status-code/",
+      "tutorial/response-status-code/",
+      "tutorial/response-status-code/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment recevoir un fichier envoyé par l'utilisateur ?",
+    "attendu": "tutorial/request-files/",
+    "trouves": [
+      "tutorial/request-files/",
+      "tutorial/security/get-current-user/",
+      "tutorial/request-files/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment renvoyer une erreur 404 quand un élément n'existe pas ?",
+    "attendu": "tutorial/handling-errors/",
+    "trouves": [
+      "tutorial/handling-errors/",
+      "tutorial/path-operation-configuration/",
+      "tutorial/handling-errors/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment modifier seulement certains champs d'un objet avec PATCH ?",
+    "attendu": "tutorial/body-updates/",
+    "trouves": [
+      "tutorial/body-fields/",
+      "tutorial/body-fields/",
+      "tutorial/extra-data-types/"
+    ],
+    "hit": false
+  },
+  {
+    "question": "C'est quoi l'injection de dépendances dans FastAPI ?",
+    "attendu": "tutorial/dependencies/",
+    "trouves": [
+      "features/",
+      "tutorial/security/",
+      "tutorial/first-steps/"
+    ],
+    "hit": false
+  },
+  {
+    "question": "Comment fermer la connexion à la base de données après chaque requête avec une dépendance ?",
+    "attendu": "tutorial/dependencies/dependencies-with-yield/",
+    "trouves": [
+      "tutorial/dependencies/dependencies-with-yield/",
+      "tutorial/sql-databases/",
+      "tutorial/sql-databases/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment protéger une route avec un token JWT ?",
+    "attendu": "tutorial/security/oauth2-jwt/",
+    "trouves": [
+      "tutorial/security/oauth2-jwt/",
+      "tutorial/security/oauth2-jwt/",
+      "tutorial/security/oauth2-jwt/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment autoriser mon frontend sur un autre domaine à appeler mon API ?",
+    "attendu": "tutorial/cors/",
+    "trouves": [
+      "tutorial/security/first-steps/",
+      "tutorial/bigger-applications/",
+      "tutorial/security/first-steps/"
+    ],
+    "hit": false
+  },
+  {
+    "question": "Comment lancer une tâche après avoir renvoyé la réponse, par exemple envoyer un email ?",
+    "attendu": "tutorial/background-tasks/",
+    "trouves": [
+      "tutorial/background-tasks/",
+      "tutorial/middleware/",
+      "tutorial/background-tasks/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment découper mon application en plusieurs fichiers ?",
+    "attendu": "tutorial/bigger-applications/",
+    "trouves": [
+      "tutorial/bigger-applications/",
+      "tutorial/bigger-applications/",
+      "tutorial/bigger-applications/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment écrire des tests pour mon API ?",
+    "attendu": "tutorial/testing/",
+    "trouves": [
+      "tutorial/testing/",
+      "tutorial/testing/",
+      "tutorial/testing/"
+    ],
+    "hit": true
+  },
+  {
+    "question": "Comment mettre mon application FastAPI dans un conteneur Docker ?",
+    "attendu": "deployment/docker/",
+    "trouves": [
+      "deployment/docker/",
+      "deployment/docker/",
+      "deployment/docker/"
+    ],
+    "hit": true
+  }
+]
