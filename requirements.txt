@@ -4,3 +4,4 @@ python-dotenv
 tqdm
 sentence-transformers
 chromadb
+openai

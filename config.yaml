@@ -59,3 +59,11 @@ embeddings:
 
 vector_db:
   path: chroma_db
+
+llm:
+  provider: openai
+  max_tokens: 400
+  local:
+    model: Qwen/Qwen2.5-0.5B-Instruct
+  openai:
+    model: gpt-4o-mini
