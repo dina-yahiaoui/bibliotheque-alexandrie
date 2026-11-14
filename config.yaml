@@ -63,7 +63,12 @@ vector_db:
 llm:
   provider: openai
   max_tokens: 400
+  prompt: prompts/system_v1.md
   local:
     model: Qwen/Qwen2.5-0.5B-Instruct
   openai:
     model: gpt-4o-mini
+
+retrieval:
+  chunk_size: 1000
+  k: 3
