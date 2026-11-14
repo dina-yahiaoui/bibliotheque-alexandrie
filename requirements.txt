@@ -5,3 +5,5 @@ tqdm
 sentence-transformers
 chromadb
 openai
+fastapi
+uvicorn
