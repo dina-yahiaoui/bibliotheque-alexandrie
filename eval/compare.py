@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-VERSIONS = ["v1", "v2"]
+VERSIONS = ["v1", "v2", "v3"]
 
 
 def load(version):

@@ -55,19 +55,26 @@ def ask(question, provider=None, prompt_path=None):
     result = generate(messages, provider)
     answer = result["answer"]
     is_idk = IDK_PHRASE in answer.lower()
+    sources = [] if is_idk else extract_sources(answer, passages)
+
+    # 4. Garde-fou : une réponse sans aucune source valide n'est pas affichée
+    guard_triggered = not is_idk and not sources
+    if guard_triggered:
+        answer = "Je ne sais pas."
+        is_idk = True
 
     return {
         "question": question,
         "answer": answer,
-        "sources": [] if is_idk else extract_sources(answer, passages),
+        "sources": sources,
         "is_idk": is_idk,
+        "guard_triggered": guard_triggered,
         "nb_passages": len(passages),
         "provider": result["provider"],
         "model": result["model"],
         "cached": result["cached"],
         "duration": round(time.time() - start, 2),
     }
-
 
 if __name__ == "__main__":
     r = ask(sys.argv[1])

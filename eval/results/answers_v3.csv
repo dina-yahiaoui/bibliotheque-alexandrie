@@ -1,0 +1,92 @@
+﻿num;type;question;page_attendue;reponse;sources_citees;correcte;sources_ok;refus_ok;duree_s
+1;corpus;Comment rendre un paramètre de requête optionnel ?;tutorial/query-params/;"Pour rendre un paramètre de requête optionnel, vous devez définir sa valeur par défaut sur `None`. Cela signifie que si vous ne fournissez pas de valeur pour ce paramètre, il sera considéré comme optionnel et prendra la valeur `None` par défaut [3]. 
+
+Il manque des détails sur la manière de déclarer ce paramètre dans le code.";tutorial/query-params/;oui;oui;oui;3.94
+2;corpus;Comment récupérer une valeur directement dans l'URL, comme l'id d'un utilisateur ?;tutorial/path-params/;Je ne sais pas.;;non;non;non;1.11
+3;corpus;Comment envoyer des données JSON dans le corps d'une requête POST ?;tutorial/body/;"Pour envoyer des données JSON dans le corps d'une requête POST, vous devez utiliser des modèles Pydantic pour déclarer le corps de la requête. Cela vous permet de tirer parti de toutes les fonctionnalités et avantages offerts par Pydantic [3]. 
+
+Cependant, les passages ne précisent pas les étapes exactes pour envoyer les données JSON dans une requête POST, donc il manque des détails sur la manière de procéder.";tutorial/body/;oui;oui;oui;2.12
+4;corpus;Comment limiter la longueur maximale d'un texte passé en paramètre de requête ?;tutorial/query-params-str-validations/;"Pour limiter la longueur maximale d'un texte passé en paramètre de requête, vous devez utiliser `Query` dans l'annotation du paramètre et définir `max_length` à 50. Cela indique à FastAPI qu'il doit valider que la longueur ne dépasse pas 50 caractères. De plus, cela permettra d'afficher une erreur claire pour le client si les données ne sont pas valides et de documenter le paramètre dans le schéma OpenAPI [3]. 
+
+Il manque des détails sur la manière d'implémenter cela dans le code.";tutorial/query-params-str-validations/;oui;oui;oui;2.88
+5;corpus;Comment imposer qu'un nombre dans l'URL soit supérieur à zéro ?;tutorial/path-params-numeric-validations/;"Pour imposer qu'un nombre dans l'URL soit supérieur à zéro, vous pouvez utiliser la validation de type `float` avec la contrainte `gt` (greater than). Cela permet de déclarer qu'une valeur doit être supérieure à `0`. Par exemple, `0.5` serait une valeur valide, tandis que `0.0` ou `0` ne le seraient pas [1]. 
+
+Il manque des détails sur la manière exacte de déclarer cela dans l'URL.";tutorial/path-params-numeric-validations/;oui;oui;oui;2.31
+6;corpus;Comment lire un cookie envoyé par le navigateur ?;tutorial/cookie-params/;Je ne sais pas.;;non;non;non;0.78
+7;corpus;Comment récupérer le User-Agent de la requête ?;tutorial/header-params/;Je ne sais pas.;;non;non;non;0.72
+8;corpus;Comment éviter de renvoyer le mot de passe de l'utilisateur dans la réponse ?;tutorial/response-model/;"Pour éviter de renvoyer le mot de passe de l'utilisateur dans la réponse, il est recommandé de créer un modèle d'entrée qui contient le mot de passe en texte clair et un modèle de sortie qui ne l'inclut pas. En utilisant FastAPI, vous pouvez déclarer le `response_model` pour être votre modèle de sortie qui ne contient pas le mot de passe. Ainsi, FastAPI filtrera automatiquement toutes les données qui ne sont pas déclarées dans le modèle de sortie, empêchant l'envoi du mot de passe dans la réponse [2]. 
+
+Il est également important de ne jamais stocker le mot de passe en clair ou de l'envoyer dans une réponse, sauf si vous êtes conscient des risques associés [1].";tutorial/response-model/, tutorial/response-model/;oui;oui;oui;2.94
+9;corpus;Comment renvoyer le code 201 après avoir créé un élément ?;tutorial/response-status-code/;"Pour renvoyer le code 201 après avoir créé un élément, vous pouvez utiliser le code de statut `201`, qui signifie ""Created"". Il est couramment utilisé après la création d'un nouvel enregistrement dans la base de données [2]. 
+
+Cependant, les passages ne fournissent pas d'informations spécifiques sur la manière de l'implémenter dans le code.";tutorial/response-status-code/;partiel;oui;oui;3.04
+10;corpus;Comment recevoir un fichier envoyé par l'utilisateur ?;tutorial/request-files/;"Pour recevoir un fichier envoyé par l'utilisateur, vous devez d'abord installer `python-multipart` et l'ajouter à votre projet. Ensuite, vous pouvez définir les fichiers à télécharger en utilisant `File`. Les fichiers téléchargés sont envoyés sous forme de ""form data"" [3]. 
+
+Il manque des détails sur la manière exacte de recevoir le fichier dans le code.";tutorial/request-files/;oui;oui;oui;2.27
+11;corpus;Comment renvoyer une erreur 404 quand un élément n'existe pas ?;tutorial/handling-errors/;"Pour renvoyer une erreur 404 lorsque l'élément n'existe pas, vous devez utiliser `HTTPException` pour retourner des réponses HTTP avec des erreurs au client [1]. De plus, vous pouvez définir le code de statut HTTP à utiliser dans la réponse de votre opération de chemin, en passant directement le code entier, comme `404` [2]. 
+
+Il est également important de noter que les codes de statut dans la plage de 400, comme le 404, indiquent qu'il y a eu une erreur du côté du client, par exemple lorsque l'élément que le client essayait d'accéder n'existe pas [3]. 
+
+Il manque des détails sur la manière précise d'implémenter cela dans le code.";tutorial/handling-errors/, tutorial/path-operation-configuration/, tutorial/handling-errors/;partiel;oui;oui;2.81
+12;corpus;Comment modifier seulement certains champs d'un objet avec PATCH ?;tutorial/body-updates/;Je ne sais pas.;;non;non;non;0.87
+13;corpus;C'est quoi l'injection de dépendances dans FastAPI ?;tutorial/dependencies/;"L'injection de dépendances dans FastAPI est un système très facile à utiliser, mais extrêmement puissant. Elle permet de créer une hiérarchie ou un ""graph"" de dépendances, où même les dépendances peuvent avoir d'autres dépendances. Tout cela est automatiquement géré par le framework. Les dépendances peuvent nécessiter des données provenant des requêtes et peuvent augmenter les contraintes des opérations de chemin ainsi que la documentation automatique. De plus, il y a une validation automatique même pour les paramètres des opérations de chemin définis dans les dépendances. Ce système prend également en charge des systèmes d'authentification utilisateur complexes, des connexions à des bases de données, etc., sans compromis avec les bases de données, les interfaces utilisateur, etc., tout en permettant une intégration facile avec tous ces éléments [1].";features/;partiel;non;oui;3.09
+14;corpus;Comment fermer la connexion à la base de données après chaque requête avec une dépendance ?;tutorial/dependencies/dependencies-with-yield/;"Pour fermer la connexion à la base de données après chaque requête avec une dépendance, vous pouvez utiliser une dépendance avec `yield`. Le code avant et y compris l'instruction `yield` est exécuté avant de créer une réponse, et le code suivant l'instruction `yield` est exécuté après la réponse. Cela permet de gérer la création et la fermeture de la session de base de données correctement [1]. 
+
+Il est également mentionné que vous pouvez créer une dépendance FastAPI avec `yield` qui fournira une nouvelle `Session` pour chaque requête, ce qui garantit que vous utilisez une seule session par requête [2]. 
+
+Cependant, les passages ne précisent pas explicitement comment fermer la connexion après l'utilisation de la session.";tutorial/dependencies/dependencies-with-yield/, tutorial/sql-databases/;oui;oui;oui;2.95
+15;corpus;Comment protéger une route avec un token JWT ?;tutorial/security/oauth2-jwt/;Je ne sais pas.;;non;non;non;0.82
+16;corpus;Comment autoriser mon frontend sur un autre domaine à appeler mon API ?;tutorial/cors/;"Pour autoriser votre frontend sur un autre domaine à appeler votre API, vous pouvez utiliser **OAuth2** pour gérer l'authentification entre le frontend et le backend. Cela permet au frontend de s'authentifier auprès du backend en utilisant un **nom d'utilisateur** et un **mot de passe** [3]. 
+
+Cependant, les passages ne fournissent pas d'informations spécifiques sur la configuration des CORS (Cross-Origin Resource Sharing) ou d'autres mécanismes nécessaires pour permettre les appels entre différents domaines.";tutorial/security/first-steps/;non;non;oui;2.1
+17;corpus;Comment lancer une tâche après avoir renvoyé la réponse, par exemple envoyer un email ?;tutorial/background-tasks/;"Pour lancer une tâche après avoir renvoyé la réponse, vous devez définir une tâche en arrière-plan et l'ajouter à l'objet des tâches en arrière-plan dans votre fonction d'opération de chemin. Vous pouvez utiliser la méthode `.add_task()` pour cela. Cette méthode reçoit comme arguments une fonction de tâche à exécuter en arrière-plan, ainsi qu'une séquence d'arguments et des arguments de mot-clé à passer à cette fonction de tâche [3].
+
+Il manque des détails sur la manière de définir la fonction de tâche elle-même et sur la façon de l'appeler dans le contexte de votre application.";tutorial/background-tasks/;oui;oui;oui;2.48
+18;corpus;Comment découper mon application en plusieurs fichiers ?;tutorial/bigger-applications/;"Pour découper votre application en plusieurs fichiers, vous pouvez organiser votre structure de fichiers comme suit :
+
+1. Créez un répertoire principal pour votre application, par exemple `app`.
+2. À l'intérieur de ce répertoire, ajoutez un fichier `__init__.py` pour le transformer en package Python.
+3. Ajoutez des fichiers de modules, comme `main.py` et `dependencies.py`, qui seront des modules de votre package `app`.
+4. Créez des sous-répertoires pour organiser des fonctionnalités spécifiques, comme `routers` et `internal`, chacun contenant également un fichier `__init__.py` pour les transformer en sous-packages.
+5. Dans chaque sous-répertoire, vous pouvez ajouter des fichiers supplémentaires, comme `items.py` et `users.py` dans `routers`, qui seront des sous-modules de votre package.
+
+Cette structure permet d'importer facilement du code d'un fichier à un autre grâce aux fichiers `__init__.py` qui définissent les packages et sous-packages [1][2]. 
+
+Il manque des détails sur la manière de gérer les opérations de chemin (path operations) dans ces fichiers, mais la structure de base est décrite.";tutorial/bigger-applications/, tutorial/bigger-applications/;oui;oui;oui;4.61
+19;corpus;Comment écrire des tests pour mon API ?;tutorial/testing/;"Pour écrire des tests pour votre API FastAPI, vous devez suivre ces étapes :
+
+1. Installez `httpx` en ajoutant à votre projet avec la commande suivante :
+   ```console
+   $ uv add httpx
+   ```
+   [2]
+
+2. Importez `TestClient`.
+
+3. Créez un `TestClient` en passant votre application FastAPI à celui-ci.
+
+4. Créez des fonctions de test dont le nom commence par `test_`, conformément à la convention standard de `pytest`.
+
+5. Utilisez l'objet `TestClient` de la même manière que vous le feriez avec `httpx`.
+
+6. Écrivez des assertions simples avec les expressions Python standard que vous devez vérifier.
+
+7. Notez que les fonctions de test sont des définitions normales (`def`), et non des définitions asynchrones (`async def`). Les appels au client sont également des appels normaux, sans utiliser `await`. Cela vous permet d'utiliser `pytest` directement sans complications. [2]
+
+Il manque des détails sur la manière de structurer les tests ou des exemples spécifiques de tests.";tutorial/testing/;oui;oui;oui;4.17
+20;corpus;Comment mettre mon application FastAPI dans un conteneur Docker ?;deployment/docker/;"Pour mettre votre application FastAPI dans un conteneur Docker, vous devez suivre ces étapes :
+
+1. **Construire une image de conteneur Linux** en utilisant Docker. Cela inclut la création d'un fichier `Dockerfile` qui définit l'environnement de votre application. Un exemple de `Dockerfile` est fourni dans le passage [1].
+
+2. **Exécuter un conteneur basé sur votre image**. Vous pouvez utiliser la commande suivante pour démarrer le conteneur :
+   ```console
+   $ docker run -d --name mycontainer -p 80:80 myimage
+   ```
+   Cette commande est mentionnée dans le passage [2].
+
+Il manque des détails sur la configuration spécifique de votre application FastAPI et sur le contenu du fichier `requirements.txt`, qui sont nécessaires pour une mise en œuvre complète.";deployment/docker/, deployment/docker/;partiel;oui;oui;4.09
+21;hors_corpus;Comment utiliser les WebSockets avec FastAPI ?;;Je ne sais pas.;;oui;oui;oui;0.8
+22;hors_corpus;Comment ajouter GraphQL à mon application FastAPI ?;;Je ne sais pas.;;oui;oui;oui;1.09
+23;hors_corpus;Comment faire un rebase interactif avec Git ?;;Je ne sais pas.;;oui;oui;oui;0.83
+24;hors_corpus;Comment installer Django dans un environnement virtuel ?;;Je ne sais pas.;;oui;oui;oui;1.42
+25;hors_corpus;Comment entraîner une régression linéaire avec scikit-learn ?;;Je ne sais pas.;;oui;oui;oui;0.83
