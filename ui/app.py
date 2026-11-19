@@ -35,7 +35,13 @@ with gr.Blocks(title="La Bibliothèque d'Alexandrie") as demo:
         "Pose une question sur la documentation : l'assistant répond **uniquement** à partir de la doc "
         "et **cite ses sources**. S'il ne trouve pas la réponse, il te le dit."
     )
-
+    gr.Markdown(
+        "> 🔒 **Confidentialité** : pour générer la réponse, ta question est envoyée à **OpenAI** (États-Unis), "
+        "avec des extraits de la documentation. Les **e-mails, numéros de téléphone et clés API sont masqués** "
+        "avant l'envoi. Nous **n'enregistrons pas le texte** de ta question : seulement des statistiques anonymes "
+        "(temps de réponse, nombre de passages, « je ne sais pas »), supprimées après **30 jours**. "
+        "Merci de ne pas écrire d'informations personnelles (nom, adresse…)."
+    )
     question = gr.Textbox(label="Ta question", placeholder="Ex : Comment rendre un paramètre de requête optionnel ?")
     send_button = gr.Button("Envoyer", variant="primary")
 

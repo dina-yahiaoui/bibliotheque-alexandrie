@@ -5,6 +5,7 @@ from pathlib import Path
 
 from rag.llm import config, generate
 from rag.retriever import search
+from rag.privacy import mask_personal_data, remove_placeholders
 
 IDK_PHRASE = "je ne sais pas"
 
@@ -41,10 +42,16 @@ def extract_sources(answer, passages):
 def ask(question, provider=None, prompt_path=None):
     """La chaîne complète : question -> recherche -> prompt -> réponse avec sources."""
     start = time.time()
+    # 0. Confidentialité : on masque les données personnelles AVANT tout traitement
+    original_question = question
+    question = mask_personal_data(question)
 
     # 1. Recherche des passages
-    passages = search(question, k=config["retrieval"]["k"], chunk_size=config["retrieval"]["chunk_size"])
-
+    passages = search(
+        remove_placeholders(question),
+        k=config["retrieval"]["k"],
+        chunk_size=config["retrieval"]["chunk_size"],
+    )
     # 2. Construction du message pour le LLM
     messages = [
         {"role": "system", "content": load_prompt(prompt_path)},
@@ -68,8 +75,10 @@ def ask(question, provider=None, prompt_path=None):
         "answer": answer,
         "sources": sources,
         "is_idk": is_idk,
+        "masked": question != original_question,
         "guard_triggered": guard_triggered,
         "nb_passages": len(passages),
+        "passages_urls": [p["source_url"] for p in passages],  # pour le diagnostic
         "provider": result["provider"],
         "model": result["model"],
         "cached": result["cached"],
