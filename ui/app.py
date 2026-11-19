@@ -111,4 +111,4 @@ with gr.Blocks(title="La Bibliothèque d'Alexandrie") as demo:
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(inbrowser=True)
