@@ -10,3 +10,4 @@ data/*
 chroma_db/
 cache/
 *.sqlite
+logs/

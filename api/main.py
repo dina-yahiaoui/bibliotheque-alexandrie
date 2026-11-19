@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
+from rag.monitoring import get_stats, log_question
 from rag.pipeline import ask
 
 app = FastAPI(
@@ -44,9 +45,18 @@ def post_question(payload: QuestionIn):
     except RuntimeError as error:  # par exemple : OpenAI saturé (erreur 429)
         raise HTTPException(status_code=503, detail=str(error))
 
+    # Surveillance : une ligne de statistiques (jamais le texte de la question)
+    log_question(result)
+
     return AnswerOut(
         answer=result["answer"],
         sources=result["sources"],
         response_time=result["duration"],
         is_idk=result["is_idk"],
     )
+
+
+@app.get("/stats")
+def stats():
+    """Statistiques d'utilisation (temps de réponse, passages, « je ne sais pas »...)."""
+    return get_stats()
