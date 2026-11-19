@@ -11,8 +11,8 @@ def clean_markdown(text):
     text = re.sub(r"\s*\{\s*#[^}]*\}", "", text)               # 2. ancres de titres
     text = re.sub(r"^///.*$", "", text, flags=re.MULTILINE)    # 3. encadrés ///
     text = re.sub(r"<[^>]+>", "", text)                        # 4. balises HTML
-    text = re.sub(r"\n{3,}", "\n\n", text) 
-    text = html.unescape(text)                                 # 6. &apos; -> '                    # 5. lignes vides en trop
+    text = re.sub(r"\n{3,}", "\n\n", text)                     # 5. lignes vides en trop
+    text = html.unescape(text)                                 # 6. &apos; -> '
     return text.strip()
 
 

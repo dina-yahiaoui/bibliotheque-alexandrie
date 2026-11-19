@@ -117,10 +117,13 @@ python -m ui.app                  # terminal 2 : interface sur http://127.0.0.1:
 
 ```
 bibliotheque-alexandrie/
+├── README.md
 ├── config.yaml              # corpus, découpage, embeddings, LLM, recherche
 ├── .env.example             # variables à renseigner (sans valeur)
+├── .gitignore               # .env, data/, chroma_db/, cache/, logs/, .venv/ non versionnés
 ├── requirements.txt
 ├── run.py                   # lance l'API et l'interface en une commande
+├── data/                    # corpus téléchargé et passages (régénérables, non versionnés)
 ├── ingest/
 │   ├── fetch.py             # téléchargement du corpus + manifest des URL d'origine
 │   ├── chunk.py             # nettoyage et découpage en passages
@@ -143,9 +146,11 @@ bibliotheque-alexandrie/
 │   ├── eval_answers.py            # évaluation des réponses (3 critères)
 │   ├── eval_attacks.py            # tests de contournement
 │   ├── compare.py                 # tableau de comparaison des versions
-│   └── results/                   # résultats (preuves)
-├── api/main.py
-└── ui/app.py
+│   └── results/                   # résultats (preuves) : answers_v1/v2/v3, attaques, retrieval, comparaison.md
+├── api/
+│   └── main.py              # API FastAPI : POST /question, GET /stats, GET /health
+└── ui/
+    └── app.py               # interface Gradio (onglets Question et Statistiques)
 ```
 
 Non versionnés (régénérables) : `data/`, `chroma_db/`, `cache/`, `logs/`, `.env`.

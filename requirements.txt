@@ -1,10 +1,11 @@
 requests
 pyyaml
 python-dotenv
-tqdm
 sentence-transformers
+transformers
 chromadb
 openai
 fastapi
+pydantic
 uvicorn
 gradio
